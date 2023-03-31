@@ -1,12 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+
+  const onTapTap = () => {
+
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Welcome'}}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    {/* <View style={styles.container}>
+      <Text>Open up App.js to start working on your app</Text>
       <StatusBar style="auto" />
-    </View>
+      <Text onTap={onTapTap}>Texting</Text>
+      <TextInput defaultValue='Test Input' style={{height: 40, borderColor: 'Green', borderWidth: 2}} />
+    </View> */}
+    </NavigationContainer>
   );
 }
 
